@@ -1,8 +1,10 @@
 import "../styles/globals.css";
 import Head from "next/head";
+import {ClerkProvider} from '@clerk/nextjs'
 
 export default function App({ Component, pageProps }) {
   return (
+    <ClerkProvider>
     <main>
       <Head>
         <title>Split</title>
@@ -15,5 +17,6 @@ export default function App({ Component, pageProps }) {
       </Head>
       <Component {...pageProps} />
     </main>
+    </ClerkProvider>
   );
 }
